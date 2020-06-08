@@ -11,10 +11,35 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 const quotes = [
-    {},
-    {},
-    {},
-    {}, {}
+    {
+        quote: 'You made me swallow my gum! That’s going to be in my digestive tract for sevenyears!',
+        source: 'Gideon Graves',
+        citation: 'Scott Pilgrim Vs. The World',
+        year: 2010
+    },
+    {
+        quote: 'He punched the highlights out of her hair. HE PUNCHED THE HIGHLIGHTS OUT OF HER HAIR!',
+        source: 'Young Neil',
+        citation: 'Scott Pilgrim Vs. The World',
+        year: 2010
+    },
+    {
+        quote: 'Chicken isn\'t vegan?',
+        source: 'Todd Ingram',
+        citation: 'Scott Pilgrim Vs. The World',
+        year: 2010
+    },
+    {
+        quote: 'Bread makes you fat!?',
+        source: 'Scott Pilgrim',
+        citation: 'Scott Pilgrim Vs. The World',
+        year: 2010
+    }, {
+        quote: 'Amazon.ca! What\'s the website for that?',
+        source: 'Scott Pilgrim',
+        citation: 'Scott Pilgrim Vs. The World',
+        year: 2010
+    }
 ]
 
 
