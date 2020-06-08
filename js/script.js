@@ -3,16 +3,13 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance:
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /***
- * `quotes` array
+ * This array contains objects that are filled with quotes
+ * @type {Array}
  ***/
 const quotes = [
     {
-        quote: "You made me swallow my gum! That’s going to be in my digestive tract for sevenyears!",
+        quote: "You made me swallow my gum! That’s going to be in my digestive tract for seven years!",
         source: "Gideon Graves",
         citation: "Scott Pilgrim Vs. The World",
         year: 2010
@@ -42,19 +39,42 @@ const quotes = [
     },
 ];
 /***
- * `getRandomQuote` function
+ * Returns a random object within the quotes array
+ * 
+ * @return {object} The random object value from the quotes array
  ***/
-// getRandomQuote will grab a random object from the quotes array
-function getRandomQuote(quotesArr) {
+
+function getRandomQuote() {
     // randomNumber creates a random number between 0 and the last index in the array
-    let randomNumber = Math.floor(Math.random() * quotesArr.length);
+    let randomNumber = Math.floor(Math.random() * quotes.length);
     // randomQuoted grabs a random quote from the quotes array
-    let randomQuote = quotesArr[randomNumber];
+    let randomQuote = quotes[randomNumber];
     return randomQuote;
 }
 /***
- * `printQuote` function
+ * `printQuote` function will change the html document by inserting the
+ * information from the getRandomQuote function.
+ * 
  ***/
+function printQuote() {
+    // getQuote is the return value of the getRandomQuote function
+    let getQuote = getRandomQuote();
+    /* quoteText is the string of text we will be inserting into the index.html file to display our quotes */
+    let quoteText = `<p class='quote'>${getQuote.quote}</p>`;
+    quoteText += `<p class='source'>${getQuote.source}`;
+    //*This if statements checks to see if there is a citation property in our object */
+    if (getQuote.citation) {
+        quoteText += `<span class='citation'>${getQuote.citation}</span>`;
+    }
+    //*This if statements checks to see if there is a year property in our object */
+    if (getQuote.year) {
+        quoteText += `<span class='year'>${getQuote.year}</span>`;
+    }
+    quoteText += `</p>`;
+    // We are now assigning the inner HTML to our quoteText variable
+    document.getElementById('quote-box').innerHTML = quoteText;
+}
+
 
 /***
  * click event listener for the print quote button
@@ -62,4 +82,3 @@ function getRandomQuote(quotesArr) {
  ***/
 
 document.getElementById("load-quote").addEventListener("click", printQuote, false);
-
