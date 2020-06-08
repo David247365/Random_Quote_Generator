@@ -51,7 +51,7 @@ h1 {
 .container {
   width: 90%;
   max-width: 1024px;
-  margin: auto;
+  margin: 0 auto;
   padding: 5px;
 }
 
