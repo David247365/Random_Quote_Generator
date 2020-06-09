@@ -23,8 +23,8 @@ let blue;
  */
 let randomNumForColor;
 
-const quoteInterval = window.setInterval(printQuote, 10000);
-const colorInterval = window.setInterval(randomColor, 10000);
+const quoteInterval = window.setInterval(printQuote, 5000);
+const colorInterval = window.setInterval(randomColor, 5000);
 
 /***
  * This array contains objects that are filled with quotes
