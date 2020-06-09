@@ -2,6 +2,16 @@
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
+
+/***
+ * @type {object}
+ */
+let getQuote;
+/**
+ * @type {object}
+ */
+let randomQuote;
+
 /***
  * This array contains objects that are filled with quotes
  * @type {Array}
@@ -41,7 +51,11 @@ function getRandomQuote() {
     // randomNumber creates a random number between 0 and the last index in the array
     let randomNumber = Math.floor(Math.random() * quotes.length);
     // randomQuoted grabs a random quote from the quotes array
-    let randomQuote = quotes[randomNumber];
+    randomQuote = quotes[randomNumber];
+    /* The if statement checks if the current object in the quote array is the same as the previous on, and if it is, it runs the function again to make sure they are not the same */
+    if (randomQuote === getQuote) {
+        return getRandomQuote();
+    }
     return randomQuote;
 }
 /***
@@ -51,7 +65,7 @@ function getRandomQuote() {
  ***/
 function printQuote() {
     // getQuote is the return value of the getRandomQuote function
-    let getQuote = getRandomQuote();
+    getQuote = getRandomQuote();
     /* quoteText is the string of text we will be inserting into the index.html file to display our quotes */
     let quoteText = `<p class='quote'>${getQuote.quote}</p>`;
     quoteText += `<p class='source'>${getQuote.source}`;
@@ -71,5 +85,6 @@ function printQuote() {
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
-document.getElementById("load-quote").addEventListener("click", printQuote,
-    false);
+printQuote();
+
+document.getElementById("load-quote").addEventListener("click", printQuote, false);
