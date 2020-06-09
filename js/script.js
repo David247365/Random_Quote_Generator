@@ -67,8 +67,8 @@ function printQuote() {
     // getQuote is the return value of the getRandomQuote function
     getQuote = getRandomQuote();
     /* quoteText is the string of text we will be inserting into the index.html file to display our quotes */
-    let quoteText = `<p class='quote'>${getQuote.quote}</p>`;
-    quoteText += `<p class='source'>${getQuote.source}`;
+    let quoteText = `<p class='quote'>${getQuote.quote}</p>
+                     <p class='source'>${getQuote.source}`;
     //*This if statements checks to see if there is a citation property in our object */
     if (getQuote.citation) {
         quoteText += `<span class='citation'>${getQuote.citation}</span>`;
