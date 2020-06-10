@@ -7,7 +7,7 @@
 
 body {
   background-color: rgb(58, 193, 98);
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Playfair Display', serif;
   padding: 5px;
 }
@@ -23,7 +23,7 @@ header {
 }
 
 h1 {
-  text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
+  text-shadow: 1px 1px 1px rgba(50, 50, 50, 1);
 }
 
 .load-quote {
